@@ -5,6 +5,6 @@ resources:
 - name: my-service
   type: deployment.jinja
   properties:
-    clusterType: testdpl1-my-cluster-type
+    clusterType: cluster-my-cluster-type
     image: nginx
     port: 80
