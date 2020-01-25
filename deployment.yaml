@@ -6,5 +6,5 @@ resources:
   type: deployment.jinja
   properties:
     clusterType: cluster-my-cluster-type
-    image: nginx
+    image: gcr.io/bachelor-2020/hello-world:latest
     port: 80
