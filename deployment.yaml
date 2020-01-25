@@ -7,4 +7,4 @@ resources:
   properties:
     clusterType: cluster-my-cluster-type
     image: gcr.io/bachelor-2020/hello-world:latest
-    port: 80
+    port: 8080
