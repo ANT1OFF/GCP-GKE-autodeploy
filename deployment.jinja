@@ -56,7 +56,7 @@ resources:
             - containerPort: {{ PORT }}
 
 - name: {{ NAME_PREFIX }}-ingress
-  type: {{ CLUSTER_TYPE }}:{{ INGRESS_COLLECTION }}
+  type: {{ CLUSTER_TYPE }}-v1beta1-extensions:{{ INGRESS_COLLECTION }}
   properties:
     apiVersion: extensions/v1beta1
     kind: Ingress
