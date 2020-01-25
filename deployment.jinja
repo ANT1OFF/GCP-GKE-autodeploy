@@ -58,7 +58,7 @@ resources:
 - name: {{ NAME_PREFIX }}-ingress
   type: {{ CLUSTER_TYPE }}:{{ INGRESS_COLLECTION }}
   properties:
-    apiVersion: apps/v1beta1
+    apiVersion: extensions/v1beta1
     kind: Ingress
     namespace: default
     metadata:
