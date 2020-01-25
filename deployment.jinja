@@ -6,7 +6,7 @@
 {% set DEPLOYMENT_COLLECTION_PREFIX = '/apis/apps/v1beta1/namespaces/{namespace}/' %}
 {% set DEPLOYMENT_COLLECTION = DEPLOYMENT_COLLECTION_PREFIX + 'deployments' %}
 
-{% set INGRESS_COLLECTION_PREFIX = '/apis/apps/v1beta1/namespaces/{namespace}/' %}
+{% set INGRESS_COLLECTION_PREFIX = '/apis/extensions/v1beta1/namespaces/{namespace}/' %}
 {% set INGRESS_COLLECTION = INGRESS_COLLECTION_PREFIX + 'ingresses' %}
 
 {% set NAME_PREFIX = env['deployment'] + '-' + env['name'] %}
