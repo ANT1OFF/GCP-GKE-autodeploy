@@ -6,3 +6,4 @@ resources:
   type: cluster.jinja
   properties:
     zone: europe-west1-b
+    initialNodeCount: 1
