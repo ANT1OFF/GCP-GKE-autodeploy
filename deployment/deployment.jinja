@@ -6,9 +6,6 @@
 {% set DEPLOYMENT_COLLECTION_PREFIX = '/apis/apps/v1beta1/namespaces/{namespace}/' %}
 {% set DEPLOYMENT_COLLECTION = DEPLOYMENT_COLLECTION_PREFIX + 'deployments' %}
 
-{% set INGRESS_COLLECTION_PREFIX = '/apis/extensions/v1beta1/namespaces/{namespace}/' %}
-{% set INGRESS_COLLECTION = INGRESS_COLLECTION_PREFIX + 'ingresses' %}
-
 {% set NAME_PREFIX = env['deployment'] + '-' + env['name'] %}
 
 {% set PORT = properties['port'] %}
@@ -55,15 +52,14 @@ resources:
             ports:
             - containerPort: {{ PORT }}
 
-- name: {{ NAME_PREFIX }}-ingress
-  type: {{ CLUSTER_TYPE }}-v1beta1-extensions:{{ INGRESS_COLLECTION }}
+{% if properties['ingress'] %}
+- name: ingress
+  type: ingress.jinja
   properties:
-    apiVersion: extensions/v1beta1
-    kind: Ingress
-    namespace: default
-    metadata:
-      name: {{ NAME_PREFIX }}-ingress
-    spec:
-      backend:
-        serviceName: {{ NAME_PREFIX }}-service
-        servicePort: {{ PORT }}
+    PORT: {{ PORT }}
+    NAME_PREFIX: {{ NAME_PREFIX }}
+    CLUSTER_TYPE: {{ CLUSTER_TYPE }}
+{% endif %}
+
+  
+
