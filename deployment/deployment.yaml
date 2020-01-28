@@ -9,4 +9,4 @@ resources:
     clusterType: cluster-my-cluster-type
     image: gcr.io/bachelor-2020/hello-world:latest
     port: 8080
-    ingress: true
+    ingress: false

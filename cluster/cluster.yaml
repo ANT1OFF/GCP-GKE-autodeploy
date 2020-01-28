@@ -7,3 +7,6 @@ resources:
   properties:
     zone: europe-west1-b
     initialNodeCount: 1
+    autoscaling: true
+    minnodecount: 1
+    maxnodecount: 3
