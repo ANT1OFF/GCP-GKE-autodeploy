@@ -52,7 +52,7 @@ resources:
             ports:
             - containerPort: {{ PORT }}
 
-{% if properties['ingress'] %}
+{% if properties['ingress'] is sameas true %}
 - name: ingress
   type: ingress.jinja
   properties:
