@@ -2,11 +2,11 @@ imports:
 - path: cluster.jinja
 
 resources:
-- name: my-cluster
+- name: ultron
   type: cluster.jinja
   properties:
     zone: europe-west1-b
-    initialNodeCount: 3
+    initialNodeCount: 1
     autoscaling: true
-    minnodecount: 3
-    maxnodecount: 5
+    minnodecount: 1
+    maxnodecount: 2

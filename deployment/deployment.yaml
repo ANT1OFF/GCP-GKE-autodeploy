@@ -3,10 +3,10 @@ imports:
 - path: ingress.jinja
 
 resources:
-- name: my-service
+- name: helloworld
   type: deployment.jinja
   properties:
-    clusterType: cluster-my-cluster-type
+    clusterType: cluster-ultron-type
     image: gcr.io/bachelor-2020/hello-world:latest
     port: 8080
     ingress: false
