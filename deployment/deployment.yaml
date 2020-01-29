@@ -7,6 +7,6 @@ resources:
   type: deployment.jinja
   properties:
     clusterType: cluster-ultron-type
-    image: gcr.io/bachelor-2020/hello-world:latest
+    image: gcr.io/bachelor-2020/hello-world:1.4
     port: 8080
     ingress: false

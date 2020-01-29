@@ -17,10 +17,13 @@ gcloud config set project name-of-project
 ## Delete cluster:
 ```gcloud deployment-manager deployments delete name-of-cluster```
 
-
+---
 
 ## Deploy application:
 ```gcloud deployment-manager deployments create name-of-deployment --config ./deployment/deployment.yaml```
+
+## Update application:
+```gcloud deployment-manager deployments update name-of-deployment --config ./deployment/deployment.yaml```
 
 ## Delete application:
 ```gcloud deployment-manager deployments delete name-of-deployment```
