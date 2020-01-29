@@ -1,5 +1,11 @@
 # GCK-autodeploy
 
+## Setup
+```
+gcloud auth login
+gcloud config set project name-of-project
+```
+
 ## Deploy cluster:
 ```gcloud deployment-manager deployments create name-of-cluster --config ./cluster/cluster.yaml```
 
