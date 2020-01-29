@@ -6,7 +6,7 @@ resources:
   type: cluster.jinja
   properties:
     zone: europe-west1-b
-    initialNodeCount: 1
+    initialNodeCount: 3
     autoscaling: true
-    minnodecount: 1
-    maxnodecount: 3
+    minnodecount: 3
+    maxnodecount: 5
