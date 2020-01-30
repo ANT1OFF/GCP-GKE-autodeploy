@@ -3,6 +3,9 @@
 {% set TYPE_NAME = NAME_PREFIX + '-type' %}
 {% set K8S_ENDPOINTS = {'': 'api/v1', '-apps': 'apis/apps/v1beta1', '-v1beta1-extensions': 'apis/extensions/v1beta1'} %}
 {% set NODE_POOL_NAME = 'node-pool' %}
+{% set MIN_NODE_COUNT = properties['minnodecount'] if properties['minnodecount'] %}
+{% set MAX_NODE_COUNT = properties['maxnodecount'] if properties['maxnodecount'] %}
+
 
 resources:
 - name: {{ CLUSTER_NAME }}
@@ -21,12 +24,16 @@ resources:
           - https://www.googleapis.com/auth/monitoring
         initialNodeCount: {{ properties['initialNodeCount'] }}
         
-        {% if properties['autoscaling'] is defined and properties['autoscaling'] is sameas true %}
+        {% if properties['autoscaling'] %}
         autoscaling:
           enabled: {{ properties['autoscaling'] }}  {# TODO: put test to check if autoprovisioned is true and min max is not set, otherwise define min and max node count #}
-          minNodeCount: {{ properties['minnodecount'] }}
-          maxNodeCount: {{ properties['maxnodecount'] }} 
+          {% if MIN_NODE_COUNT and MAX_NODE_COUNT %} {# Think is fix #}
+          minNodeCount: {{ MIN_NODE_COUNT }}
+          maxNodeCount: {{ MAX_NODE_COUNT }} 
           autoprovisioned: false
+          {% elif properties['autoprovisioned'] %} {# Make autoprovision default? replace elif with else #}
+          autoprovisioned: true
+          {% endif %}
         {% endif %}
 
 {% for typeSuffix, endpoint in K8S_ENDPOINTS.items() %}
