@@ -1,0 +1,6 @@
+imports:
+- path: gcs_storage.jinja
+
+resources:
+- name: storage1
+  type: gcs_storage.jinja

@@ -1,0 +1,13 @@
+## documentation https://cloud.google.com/storage/docs/json_api/v1/buckets
+
+{% set BUCKETNAME = env['name']  %}
+
+resources:
+- type: storage.v1.bucket
+#- type: gcp-types/storage-v1:buckets
+  name: {{ BUCKETNAME }}
+  properties:
+    predefinedAcl: projectPrivate
+    projection: full
+    location: EU
+    storageClass: STANDARD
