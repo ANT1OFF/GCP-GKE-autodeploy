@@ -8,5 +8,6 @@ resources:
     zone: europe-west1-b
     initialNodeCount: 1
     autoscaling: true
-    minnodecount: 1
-    maxnodecount: 2
+    autoprovisioned: true
+    #minnodecount: 1
+    maxnodecount: 45
