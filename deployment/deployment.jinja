@@ -1,4 +1,5 @@
-{% set CLUSTER_TYPE = env['project'] + '/' + properties['clusterType'] %}
+{% set CLUSTER_TYP =  'cluster-' + properties['cluster'] + '-type' %}
+{% set CLUSTER_TYPE = env['project'] + '/' + CLUSTER_TYP %}
 
 {% set SERVICE_COLLECTION_PREFIX = '/api/v1/namespaces/{namespace}/' %}
 {% set SERVICE_COLLECTION = SERVICE_COLLECTION_PREFIX + 'services' %}
