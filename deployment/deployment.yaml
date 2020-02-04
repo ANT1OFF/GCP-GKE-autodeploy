@@ -3,7 +3,7 @@ imports:
 - path: ingress.jinja
 
 resources:
-- name: helloworld
+- name: thanos
   type: deployment.jinja
   properties:
     cluster: ultron
