@@ -1,7 +1,8 @@
 {% set INGRESS_COLLECTION_PREFIX = '/apis/extensions/v1beta1/namespaces/{namespace}/' %}
 {% set INGRESS_COLLECTION = INGRESS_COLLECTION_PREFIX + 'ingresses' %}
 
-{% set CLUSTER_TYPE = properties['CLUSTER_TYPE'] %}
+{% set CLUSTER_TYP =  'cluster-' + properties['cluster'] + '-type' %}
+{% set CLUSTER_TYPE = env['project'] + '/' + CLUSTER_TYP %}
 {% set PORT = properties['PORT'] %}
 {% set NAME_PREFIX = properties['NAME_PREFIX'] %}
 
