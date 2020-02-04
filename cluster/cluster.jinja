@@ -33,6 +33,7 @@ resources:
           autoprovisioned: false
           {% elif properties['autoprovisioned'] %} {# Make autoprovision default? replace elif with else #}
           autoprovisioned: true
+          maxNodeCount: {{ MAX_NODE_COUNT }}
           {% endif %}
         {% endif %}
 
