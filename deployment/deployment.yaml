@@ -1,6 +1,7 @@
 imports:
 - path: deployment.jinja
 - path: ingress.jinja
+- path: sql.jinja
 
 resources:
 - name: thanos
@@ -10,3 +11,14 @@ resources:
     image: gcr.io/bachelor-2020/hello-world:1.7
     port: 8080
     ingress: false
+    mysql: true
+
+- name: joker
+  type: sql.jinja
+  properties:
+    region: europe-west1-b
+    tier: db-f1-micro
+    charset: utf8
+    userName: testuser
+    password: erlend
+    hostName: joker-host
