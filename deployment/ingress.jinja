@@ -1,12 +1,9 @@
 {% set INGRESS_COLLECTION_PREFIX = '/apis/extensions/v1beta1/namespaces/{namespace}/' %}
 {% set INGRESS_COLLECTION = INGRESS_COLLECTION_PREFIX + 'ingresses' %}
 
-{% set CLUSTER_TYP =  'cluster-' + properties['cluster'] + '-type' %}
-{% set CLUSTER_TYPE = env['project'] + '/' + CLUSTER_TYP %}
+{% set CLUSTER_TYPE = properties['CLUSTER_TYPE'] %}
 {% set PORT = properties['PORT'] %}
 {% set NAME_PREFIX = properties['NAME_PREFIX'] %}
-
-
 
 resources:
 - name: {{ NAME_PREFIX }}-ingress
@@ -17,6 +14,10 @@ resources:
     namespace: default
     metadata:
       name: {{ NAME_PREFIX }}-ingress
+      annotations:
+        kubernetes.io/ingress.global-static-ip-name: {{ NAME_PREFIX }}-ip
+      labels:
+        id: deployment-manager
     spec:
       backend:
         serviceName: {{ NAME_PREFIX }}-service
