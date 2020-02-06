@@ -1,3 +1,5 @@
+# Example # When in use change to cluster.yaml and place in repo
+
 imports:
 - path: cluster.jinja
 
