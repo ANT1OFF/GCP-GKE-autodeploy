@@ -7,6 +7,7 @@
 {% set userName = properties['userName'] %}
 
 resources:
+# !! The instance name is unavailable for up to a week before it can be reused.
 - name: {{ instanceName }}
 #  type: sqladmin.v1beta4.instance
   type: gcp-types/sqladmin-v1beta4:instances
