@@ -1,15 +1,15 @@
 # Example # When in use change to sql.yaml and place in repo
 
 imports:
-- path: sql.jinja
-
-resources:
-- name: joker
-  type: sql.jinja
-  properties:
-    region: europe-west1-b
-    tier: db-f1-micro
-    charset: utf8
-    userName: testuser
-    password: erlend
-    hostName: joker-host
+  - path: sql.jinja
+  
+  resources:
+  - name: joker
+    type: sql.jinja
+    properties:
+      region: europe-west1
+      tier: db-f1-micro
+      charset: utf8
+      userName: testuser
+      password: erlend
+      databaseVersion: POSTGRES_11

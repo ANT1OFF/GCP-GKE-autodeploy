@@ -56,7 +56,7 @@ resources:
             ports:
             - containerPort: {{ PORT }}
           {% if properties['sql'] is sameas true %}
-          - name: mysql
+          - name: proxy
             image: gcr.io/cloudsql-docker/gce-proxy:1.16
             command: ["/cloud_sql_proxy",
                       # TODO: get database-instance from name/properties
