@@ -10,5 +10,4 @@ resources:
     charset: utf8
     userName: testuser
     password: erlend
-    hostName: %
     databaseVersion: POSTGRES_11
