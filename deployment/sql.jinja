@@ -31,5 +31,5 @@ resources:
   properties:
     name: {{ userName }}
     instance: $(ref.{{ instanceName }}.name)
-    host: {{ properties['hostName'] }}
+    {# host: {{ properties['hostName'] }} #}
     password: {{ properties['password'] }}
