@@ -15,6 +15,7 @@ resources:
     region: {{ properties['region'] }}  
     settings:
       tier: {{ properties['tier'] }}
+    databaseVersion: {{ properties['databaseVersion'] }}
 - name: {{ dbName }}
 #  type: sqladmin.v1beta4.database
   type: gcp-types/sqladmin-v1beta4:databases
