@@ -9,10 +9,14 @@ resources:
   type: deployment.jinja
   properties:
     cluster: ultron
-    image: gcr.io/bachelor-2020/hello-world:1.7
+    image: gcr.io/bachelor-2020/test-rest:latest
     port: 8080
     ingress: false
-    mysql: true
+    sql: true
+    dbname: db4
+    region: europe-west1
+    project: bachelor-2020
+    sqlport: 3306
 
 
 
