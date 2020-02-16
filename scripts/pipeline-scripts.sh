@@ -16,3 +16,6 @@ deployService() {
 }
 
 
+# call args verbatim
+"$@"
+
