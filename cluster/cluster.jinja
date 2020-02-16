@@ -65,7 +65,7 @@ resources:
         location: HEADER
         value: >
           $.concat("Bearer ", $.googleOauth2AccessToken())
-    descriptorUrl: https://$(ref.{{ CLUSTER_NAME }}.endpoint)/swaggerapi/{{ endpoint }}
+    descriptorUrl: https://$(ref.{{ CLUSTER_NAME }}.endpoint)/openapi/v2
 {% endfor %}
 
 outputs:
