@@ -4,7 +4,7 @@
 gcpauth() {
    echo ${GCP_SECRET} > secret.json
    gcloud auth activate-service-account --key-file secret.json
-   gcloud config set project $1
+   gcloud config set project ${PROJECT}
 }
 
 deployCluster() {
