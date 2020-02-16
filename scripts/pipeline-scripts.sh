@@ -4,7 +4,7 @@
 gcpauth() {
    echo ${GCP_SECRET} > secret.json
    gcloud auth activate-service-account --key-file secret.json
-   gcloud config set project ${PROJECT}
+   gcloud config set project $1
 }
 
 deployCluster() {
@@ -16,6 +16,6 @@ deployService() {
 }
 
 
-# call args verbatim
+# calls function passed as an argument. Case sensitive
 "$@"
 
