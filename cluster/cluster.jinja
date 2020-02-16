@@ -36,7 +36,7 @@ resources:
         {% endif %}
 
 - name: {{ env["deployment"] }}-gke-type
-  type: deploymentmanager.local.typeProvider
+  type: deploymentmanager.v2beta.typeProvider
   properties:
     descriptorUrl: https://$(ref.{{ CLUSTER_NAME }}.endpoint)/openapi/v2
     options:
@@ -48,7 +48,7 @@ resources:
         value: >
           $.concat("Bearer ", $.googleOauth2AccessToken())
 - name: {{ env["deployment"] }}-gke-type-extensions
-  type: deploymentmanager.local.typeProvider
+  type: deploymentmanager.v2beta.typeProvider
   properties:
     descriptorUrl: https://$(ref.{{ CLUSTER_NAME }}.endpoint)/openapi/v2
     options:
