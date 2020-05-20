@@ -1,5 +1,7 @@
 # GCK-autodeploy
 
+This project has been abandoned in favour of an [alternative](https://bitbucket.org/escio/bacheloroppgave-bitsec-2/src/master/) using Terraform.
+
 ## Setup
 ```
 gcloud auth login
